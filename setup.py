@@ -10,8 +10,10 @@ setup(
     packages=find_packages('src'),
     package_dir={'': 'src'},
     data_files=[],
-    install_requires=[],
+    install_requires=['setuptools'],
     url='http://pypi.python.org/pypi/gang',
     license='LICENSE',
-    test_suite='nose.collector'
+    test_suite='nose.collector',
+    extras_require={'test': ['nose']},
+    tests_require=['nose']
 )
