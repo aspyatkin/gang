@@ -12,5 +12,6 @@ setup(
     data_files=[],
     install_requires=[],
     url='http://pypi.python.org/pypi/gang',
-    license='LICENSE'
+    license='LICENSE',
+    test_suite='nose.collector'
 )
