@@ -12,7 +12,7 @@ setup(
     data_files=[],
     install_requires=['setuptools'],
     url='http://pypi.python.org/pypi/gang',
-    license='LICENSE',
+    license='MIT',
     test_suite='nose.collector',
     extras_require={'test': ['nose']},
     tests_require=['nose']
