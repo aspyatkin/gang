@@ -1,2 +1,3 @@
 v0.0.0, 2014-06-21 -- Created package on PyPI
 v0.0.1, 2014-06-21 -- Updated dependencies and added some basic tests
+v0.0.2, 2014-07-07 -- Another subclass in dict

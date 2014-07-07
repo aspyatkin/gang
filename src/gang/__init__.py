@@ -30,6 +30,12 @@ class GangDict(dict):
 
     def __getattr__(self, name):
         if name in self:
-            return subclass_object(self[name])
+            return subclass_object(super(GangDict, self).__getitem__(name))
         else:
             raise AttributeError('No attribute {name}'.format(name=name))
+
+    def __getitem__(self, name):
+        if name in self:
+            return subclass_object(super(GangDict, self).__getitem__(name))
+        else:
+            raise KeyError('No key {name}'.format(name=name))
