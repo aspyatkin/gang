@@ -39,3 +39,6 @@ class GangDict(dict):
             return subclass_object(super(GangDict, self).__getitem__(name))
         else:
             raise KeyError('No key {name}'.format(name=name))
+
+    def iteritems(self):
+        return iter((x, subclass_object(y)) for x, y in super(GangDict, self).iteritems())
