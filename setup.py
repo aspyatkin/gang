@@ -10,7 +10,7 @@ setup(
     packages=find_packages('src'),
     package_dir={'': 'src'},
     data_files=[],
-    install_requires=['setuptools'],
+    install_requires=['setuptools>=5.4'],
     url='https://github.com/aspyatkin/gang',
     license='MIT',
     test_suite='nose.collector',
