@@ -1,4 +1,5 @@
 # Gang
+[![Build Status](https://travis-ci.org/aspyatkin/gang.svg?branch=master)](https://travis-ci.org/aspyatkin/gang)  
 Python dictionary with dot-style access
 
 ```python
