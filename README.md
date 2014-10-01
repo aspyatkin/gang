@@ -1,8 +1,7 @@
 # Gang
 [![Build Status](https://travis-ci.org/aspyatkin/gang.svg?branch=master)](https://travis-ci.org/aspyatkin/gang)
-[![Coverage Status](https://coveralls.io/repos/aspyatkin/gang/badge.png?branch=master)](https://coveralls.io/r/aspyatkin/gang?branch=master)  
-Python dictionary with dot-style access
-
+[![Coverage Status](https://img.shields.io/coveralls/aspyatkin/gang.svg)](https://coveralls.io/r/aspyatkin/gang?branch=master)  
+Python dictionary with dot-style access  
 ```python
 from gang import subclass_object
 
