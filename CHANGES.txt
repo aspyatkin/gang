@@ -3,3 +3,4 @@ v0.0.1, 2014-06-21 -- Updated dependencies and added some basic tests
 v0.0.2, 2014-07-07 -- Another subclass in dict
 v0.0.3, 2014-07-17 -- Overloaded dict iteritems method
 v0.0.4, 2014-08-20 -- Performed some cleanup
+v0.0.5, 2014-10-01 -- Mutable dict
