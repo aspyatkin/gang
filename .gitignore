@@ -1,3 +1,6 @@
 build/*
 dist/*
 gang.egg-info/*
+gang/*.pyc
+tests/*.pyc
+.coverage
