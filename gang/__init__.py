@@ -34,11 +34,17 @@ class GangDict(dict):
         else:
             raise AttributeError('No attribute {name}'.format(name=name))
 
-    def __getitem__(self, name):
-        if name in self:
-            return subclass_object(super(GangDict, self).__getitem__(name))
+    def __getitem__(self, key):
+        if key in self:
+            return subclass_object(super(GangDict, self).__getitem__(key))
         else:
-            raise KeyError('No key {name}'.format(name=name))
+            raise KeyError('No key {name}'.format(name=key))
+
+    def __setattr__(self, name, value):
+        super(GangDict, self).__setitem__(name, value)
+
+    def __setitem__(self, key, value):
+        super(GangDict, self).__setitem__(key, value)
 
     def iteritems(self):
         return iter((x, subclass_object(y)) for x, y in super(GangDict, self).iteritems())
