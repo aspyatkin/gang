@@ -1,6 +1,7 @@
 # Gang
 [![Build Status](https://travis-ci.org/aspyatkin/gang.svg?branch=master)](https://travis-ci.org/aspyatkin/gang)
-[![Coverage Status](https://img.shields.io/coveralls/aspyatkin/gang.svg)](https://coveralls.io/r/aspyatkin/gang?branch=master)  
+[![Coverage Status](https://img.shields.io/coveralls/aspyatkin/gang.svg)](https://coveralls.io/r/aspyatkin/gang?branch=master)
+[![Code Health](https://landscape.io/github/aspyatkin/gang/master/landscape.png)](https://landscape.io/github/aspyatkin/gang/master)  
 [![Latest Version](https://pypip.in/version/gang/badge.svg)](https://pypi.python.org/pypi/gang/)
 [![Supported Python versions](https://pypip.in/py_versions/gang/badge.svg)](https://pypi.python.org/pypi/gang/)
 [![Supported Python implementations](https://pypip.in/implementation/gang/badge.svg)](https://pypi.python.org/pypi/gang/)
