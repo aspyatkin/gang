@@ -4,3 +4,4 @@ gang.egg-info/*
 gang/*.pyc
 tests/*.pyc
 .coverage
+.tox

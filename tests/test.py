@@ -1,4 +1,11 @@
-from unittest import TestCase
+import sys
+main_ver = sys.version_info[0]
+if main_ver == 2:
+    from unittest2 import TestCase
+elif main_ver == 3:
+    from unittest import TestCase
+else:
+    raise Exception('Unknow Python version!')
 from gang import subclass_object, GangDict, GangList, GangTuple
 
 
@@ -56,5 +63,11 @@ class GangTestsBunch(TestCase):
     def test_iter_dict(self):
         obj = GangDict(dict(lorem=dict(ipsum='dolor'),
                             sit=dict(amet='consectetur')))
-        for key, val in obj.iteritems():
+        if main_ver == 2:
+            view = obj.iteritems()
+        elif main_ver == 3:
+            view = obj.items()
+        else:
+            raise Exception('Unknow Python version!')
+        for key, val in view:
             self.assertIsInstance(val, GangDict)
