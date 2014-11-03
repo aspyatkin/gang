@@ -29,13 +29,13 @@ class GangTestsBunch(TestCase):
         self.assertIsInstance(obj.hello, GangDict)
         self.assertIsInstance(obj['hello'], GangDict)
 
-    def test_dot_assign(self):
+    def test_attribute_assign(self):
         obj = GangDict({})
         obj.hello = 'world'
         self.assertEqual(obj.hello, 'world')
         self.assertEqual(obj['hello'], 'world')
 
-    def test_item_assign(self):
+    def test_key_assign(self):
         obj = GangDict({})
         obj['hello'] = 'world'
         self.assertEqual(obj['hello'], 'world')
@@ -64,13 +64,16 @@ class GangTestsBunch(TestCase):
         obj = GangDict(lorem=dict(ipsum='dolor'),
                        sit=dict(amet='consectetur'))
         if main_ver == 2:
-            view = obj.iteritems()
+            for key, val in obj.items():
+                self.assertIsInstance(val, GangDict)
+            for key, val in obj.iteritems():
+                self.assertIsInstance(val, GangDict)
         elif main_ver == 3:
-            view = obj.items()
+            for key, val in obj.items():
+                self.assertIsInstance(val, GangDict)
         else:
             raise RuntimeError('Unknown Python version!')
-        for key, val in view:
-            self.assertIsInstance(val, GangDict)
+
 
     def test_get_dict_with_key(self):
         obj = GangDict(hello='world')

@@ -60,7 +60,7 @@ class GangDict(dict):
 
 
 def _py2_dict_items(d):
-    return [(x, y) for (k, v) in d.iteritems()]
+    return [(x, y) for (x, y) in d.iteritems()]
 
 def _py2_dict_iteritems(d):
     return iter((x, subclass_object(y)) for x, y in super(GangDict, d).iteritems())
