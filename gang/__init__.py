@@ -18,58 +18,61 @@ class GangTuple(tuple):
 
 
 class GangList(list):
-    @property
-    def super(self):
-        if main_ver == 2:
-            return super(GangList, self)
-        elif main_ver == 3:
-            return super()
-        else:
-            raise Exception('Unknown Python version!')
-
     def __init__(self, data):
-        self.super.__init__(data)
+        super(GangList, self).__init__(data)
 
     def __iter__(self):
-        return iter((subclass_object(o) for o in self.super.__iter__()))
+        return iter((subclass_object(o) for o in super(GangList, self).__iter__()))
 
     def __getitem__(self, index):
-        return subclass_object(self.super.__getitem__(index))
+        return subclass_object(super(GangList, self).__getitem__(index))
 
 
 class GangDict(dict):
-    @property
-    def super(self):
-        if main_ver == 2:
-            return super(GangDict, self)
-        elif main_ver == 3:
-            return super()
-        else:
-            raise Exception('Unknown Python version!')
-
-    def __init__(self, data):
-        self.super.__init__(data)
+    def __init__(self, iterable=None, **kwarg):
+        if iterable is None:
+            iterable = {}
+        super(GangDict, self).__init__(iterable, **kwarg)
 
     def __getattr__(self, name):
         if name in self:
-            return subclass_object(self.super.__getitem__(name))
+            return subclass_object(super(GangDict, self).__getitem__(name))
         else:
-            raise AttributeError('No attribute {name}'.format(name=name))
+            raise AttributeError("'{0}' object has no attribute '{1}'".format(
+                self.__class__.__name__, name))
 
     def __getitem__(self, key):
         if key in self:
-            return subclass_object(self.super.__getitem__(key))
+            return subclass_object(super(GangDict, self).__getitem__(key))
         else:
-            raise KeyError('No key {name}'.format(name=key))
+            raise KeyError(key)
 
     def __setattr__(self, name, value):
-        self.super.__setitem__(name, value)
+        super(GangDict, self).__setitem__(name, value)
 
     def __setitem__(self, key, value):
-        self.super.__setitem__(key, value)
+        super(GangDict, self).__setitem__(key, value)
 
-    def iteritems(self):
-        return iter((x, subclass_object(y)) for x, y in self.super.iteritems())
+    def get(self, key, default_value=None):
+        if key in self:
+            return subclass_object(self[key])
+        return default_value
 
-    def items(self):
-        return iter((x, subclass_object(y)) for x, y in super().items())
+
+def _py2_dict_items(d):
+    return [(x, y) for (k, v) in d.iteritems()]
+
+def _py2_dict_iteritems(d):
+    return iter((x, subclass_object(y)) for x, y in super(GangDict, d).iteritems())
+
+def _py3_dict_items(d):
+    return iter((x, subclass_object(y)) for x, y in super(GangDict, d).items())
+
+
+if main_ver == 2:
+    GangDict.items = _py2_dict_items
+    GangDict.iteritems = _py2_dict_iteritems
+elif main_ver == 3:
+    GangDict.items = _py3_dict_items
+else:
+    raise RuntimeError('Unknown Python version!')
