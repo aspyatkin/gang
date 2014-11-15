@@ -3,7 +3,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='gang',
-    version='0.0.7',
+    version='0.0.8',
     description='Python dictionary with dot-style access',
     author='Alexander Pyatkin',
     author_email='asp@thexyz.net',
@@ -26,6 +26,7 @@ setup(
         'Programming Language :: Python :: 2.7',
         'Programming Language :: Python :: 3',
         'Programming Language :: Python :: 3.3',
+        'Programming Language :: Python :: 3.4',
         'Programming Language :: Python :: Implementation :: CPython',
         'Topic :: Utilities'
     ]
