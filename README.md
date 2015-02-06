@@ -59,3 +59,7 @@ Note that transformation to subclassed dict or list is "lazy". In the example ab
 
 I find this method useful to work with big config files in JSON or YAML.
 If you don't want to deal with lots of `config['some_value_1']['some_value_2']...` and make code more readable, you can give it a try.
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/aspyatkin/gang/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
